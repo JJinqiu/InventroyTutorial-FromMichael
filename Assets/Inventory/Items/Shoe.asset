@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Shoe
   itemImage: {fileID: 21300034, guid: 03dd1ef6fb163214c9e1ac0242dab3ba, type: 3}
-  itemHeld: 0
+  itemHeld: 1
   itemInfo: This is a shoe!
   equip: 1

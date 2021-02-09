@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4393304269868008611}
   - component: {fileID: 5424258812218577550}
   - component: {fileID: 7286904453026434405}
+  - component: {fileID: -1681236117594489046}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -118,7 +119,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5424258812218577550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1681236117594489046}
+        m_MethodName: ItemOnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-1681236117594489046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112185212797233906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6555c9d42b1ea40936cbc4cf3b0fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotItem: {fileID: 0}
+  slotImage: {fileID: 5424258812218577550}
+  slotCount: {fileID: 8366899513697594846}
 --- !u!1 &8598595988402910072
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,9 +10,12 @@ public class InventoryManager : MonoBehaviour
 
     public Inventory myBag;
     public GameObject slotGrid;
-    public Slot slotPrefab;
+    // public Slot slotPrefab;
+    public GameObject emptySlot;
     public Text itemInformation;
 
+    public List<GameObject> slots = new List<GameObject>();
+    
     private void Awake()
     {
         if (_instance != null)
@@ -31,14 +34,14 @@ public class InventoryManager : MonoBehaviour
         _instance.itemInformation.text = itemDescription;
     }
     
-    private static void CreateNewItem(Item item)
-    {
-        var newItem = Instantiate(_instance.slotPrefab, _instance.slotGrid.transform.position, Quaternion.identity);
-        newItem.gameObject.transform.SetParent(_instance.slotGrid.transform);
-        newItem.slotItem = item;
-        newItem.slotImage.sprite = item.itemImage;
-        newItem.slotCount.text = item.itemHeld.ToString();
-    }
+    // private static void CreateNewItem(Item item)
+    // {
+    //     var newItem = Instantiate(_instance.slotPrefab, _instance.slotGrid.transform.position, Quaternion.identity);
+    //     newItem.gameObject.transform.SetParent(_instance.slotGrid.transform);
+    //     newItem.slotItem = item;
+    //     newItem.slotImage.sprite = item.itemImage;
+    //     newItem.slotCount.text = item.itemHeld.ToString();
+    // }
 
     public static void RefreshItem()
     {
@@ -48,10 +51,14 @@ public class InventoryManager : MonoBehaviour
                 break;
             Destroy(_instance.slotGrid.transform.GetChild(i).gameObject);
         }
+        _instance.slots.Clear();
 
-        foreach (var item in _instance.myBag.itemList)
+        for (var i = 0; i < _instance.myBag.itemList.Count; ++i)
         {
-            CreateNewItem(item);
+            // CreateNewItem(item);
+            _instance.slots.Add(Instantiate(_instance.emptySlot));
+            _instance.slots[i].transform.SetParent(_instance.slotGrid.transform);
+            _instance.slots[i].GetComponent<Slot>().SetupSlot(_instance.myBag.itemList[i]);
         }
     }
 }

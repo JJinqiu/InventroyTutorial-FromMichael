@@ -9,6 +9,7 @@ public class Slot : MonoBehaviour
     public Image slotImage;
     public Text slotCount;
     public string slotInfo;
+    public int slotID; // 空格ID等于物品ID
     
     public GameObject itemInSlot;
     

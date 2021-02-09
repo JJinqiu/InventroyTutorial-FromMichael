@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalParent: {fileID: 0}
+  myBag: {fileID: 11400000, guid: 6372e87490ddcae48bdac8a45d90ec8b, type: 2}
+  currentItemID: 0
 --- !u!225 &3246662644854484958
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -220,6 +222,7 @@ MonoBehaviour:
   slotImage: {fileID: 8010496659567923802}
   slotCount: {fileID: 8366899513697594846}
   slotInfo: 
+  slotID: 0
   itemInSlot: {fileID: 3744276328771535265}
 --- !u!1 &6826526298669490559
 GameObject:

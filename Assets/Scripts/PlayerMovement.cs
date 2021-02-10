@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             _mIsOpen = myBag.activeSelf;
             _mIsOpen = !_mIsOpen;
             myBag.SetActive(_mIsOpen);
+            InventoryManager.RefreshItem();
         }
     }
 }
